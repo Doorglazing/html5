@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .a{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f40;
+        }
+        .target{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            left: 600px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 所有标签元素，当拖拽结束时，都是回到原处 
+    事件是由行为触发
+    但是，一个行为不止触发一个事件
+    ondragover -> 回到原处 默认
+                  drop事件
+    -->
+    <!-- draggable chrome safari支持 firefox不支持 -->
+    <!-- 默认false对于div -->
+    <div class="a" draggable="true"></div>
+    <!-- 目标元素 -->
+    <div class="target"></div>
+    <!-- a img 默认true -->
+    <!-- <a href="www.baidu.com">baidu</a>
+    <img src="" alt=""> -->
+    <!-- 拖拽的生命周期 -->
+    <!-- 拖拽的开始 拖拽的进行中  拖拽的结束 -->
+    <!-- 被拖拽的物体 目标区域 -->
+    <!-- 按下的瞬间不会触发事件 -->
+    <script>
+        var oDiv = document.getElementsByClassName('a')[0];
+        var beginX = 0;
+        var beginY = 0;
+        
+            oDiv.ondragstart = function (e) {
+                // beginX = e.clientX;
+                // beginY = e.clientY;
+            }
+            // oDiv.ondrag = function (e) {
+            //     console.log(e);
+            // }
+            oDiv.ondragend = function (e){
+                // var x = e.clientX - beginX;
+                // var y = e.clientY - beginY;
+                // oDiv.style.left = oDiv.offsetLeft + x + 'px';
+                // oDiv.style.top = oDiv.offsetTop + y + 'px';
+            }
+            var oTatget = document.getElementsByClassName('target')[0];
+            oTatget.ondragenter = function (e) {
+                //不是元素图形就如就触发 而是拖拽的鼠标进入触发
+
+            }
+            oTatget.ondragover = function (e) {
+                //和ondrag事件一样 不停触发
+                e.preventDefault();
+            }
+            oTatget.ondragleave = function(e){
+                
+            }
+            oTatget.ondrop = function(e){
+
+            }
+    </script>
+</body>
+</html>

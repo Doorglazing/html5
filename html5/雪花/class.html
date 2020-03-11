@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #can{
+            border: 1px solid black;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script src="./jquery.min.js"></script>
+    <script src="./class.js"></script>
+    <script>
+        var img = new Image();
+        img.src = '1.png';
+        img.onload = function () {
+            window.player.blurImg(img,$('.box'))
+        }
+    </script>
+    <!-- <canvas id="can" width="500px" height="500px"></canvas>
+    <img src="" alt=""> -->
+    <script>
+        // var canvas = document.getElementById('can');
+        // var ctx = canvas.getContext('2d');
+        // var oImg = document.getElementsByTagName('img')[0];
+        // ctx.beginPath();
+        
+        // ctx.globalAlpha=0.5;
+        //透明度
+        // ctx.fillStyle = 'red';
+        // ctx.strokeRect(100,100,200,200);
+        // ctx.closePath();
+        // ctx.font = '40px sans';
+        // ctx.fillStyle = 'red';
+        // //水平基准
+        // ctx.textAlign = 'center'
+        // //竖直基准
+        // ctx.textBaseline = "middle"
+        // ctx.fillText('内容',300,300);
+        // ctx.globalCompositeOperation = "destination-out";//lighter 显示重叠颜色
+        //做新旧像素处理  需要放在新旧像素之间
+        // ctx.beginPath();
+        // ctx.fillStyle = 'blue';
+        // ctx.arc(300,300,120,0,Math.PI*2,0)
+        // ctx.fill()
+        // ctx.closePath();
+        // var img = new Image();
+        // img.src = '1.png';
+        // img.onload = function () {
+        //     //3 5 9
+        //     // ctx.drawImage(img, 100, 100, 300, 300);
+        //     //当前图片 开始位置 存多大区域 
+        //     ctx.drawImage(img, 100, 100, 300, 300, 400, 400, 100, 100);
+        //     //前四个控制图片  后四个控制canvas存放
+
+        //     //base64
+        //     var data = canvas.toDataURL();
+        //     console.log(data)
+        //     oImg.src = data;
+        //     //把整个canvas都抽出来了
+
+        //     var info = ctx.getImageData(0,0,500,500);
+        //     //createImageData putImageData()重新放回到
+        //     console.log(info)
+        //     //1000000 = 500 * 500 * 4 rgba
+        // }
+       
+        
+    </script>
+</body>
+</html>

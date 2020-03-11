@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .line1{
+            stroke: black;
+            stroke-width: 3px;
+        }
+        .line2{
+            stroke-width: 5px;
+            stroke: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        svg： 矢量图 放大不会失真 适合大面积贴图， 通常动画较少或者较简单 用标签和css画
+        canvas: 适合小面积绘图 适合动画 用js画
+    --> 
+    <svg width="500px" height="300px" style="border: 1px solid black">
+        <line x1= "100" y1= "100" x2="200" y2="100" class="line1"></line>
+        <line x1= "200" y1= "100" x2="200" y2="200" class="line2"></line>
+        <rect x="50" y="50" width="50" height="50" rx="10" ry="10"/>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" height="300px" width="500px"></canvas>
+    
+    <script>
+        // 圆心x,y 半径r  弧度(起始弧度，结束弧度) 顺时针0 逆时针1 方向
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        ctx.arc(100, 100, 50, Math.PI * 0.1, Math.PI * 1.9, 0);
+        ctx.lineTo(100, 100);
+        ctx.closePath();
+        ctx.stroke();
+    </script>
+</body>
+</html>

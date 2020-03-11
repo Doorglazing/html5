@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #can{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var canvas = document.getElementById("can");
+        var ctx = canvas.getContext("2d");
+        var snowArray = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+ 
+      
+        //sonw x,y translateX rotate this
+        //render();
+        ctx.save();
+        function Snow (x, scale, rotate, speedX, speedY, speedR) {
+            this.x = x;
+            this.y = 0;
+            this.scale = scale;
+            this.rotate = rotate;
+            this.speedX = speedX;
+            this.speedY = speedY;
+            this.speedR = speedR;
+            this.render = function () {
+                ctx.save();
+                ctx.beginPath();
+                ctx.translate(this.x, this.y);
+                //
+                ctx.rotate(this.rotate * Math.PI / 180);
+                //
+                ctx.scale(this.scale,this.scale);
+                ctx.strokeStyle =　"#fff";
+                ctx.lineWidth = 10;
+                ctx.lineCap = "round";
+    
+                ctx.moveTo(- 20,0);
+                ctx.lineTo(+ 20,0);
+
+                var disX = 20 * Math.cos(60 * Math.PI / 180);
+                var disY = 20 * Math.sin(60 * Math.PI / 180);
+                ctx.moveTo(-disX, -disY);
+                ctx.lineTo(disX, disY);
+                ctx.moveTo(disX, -disY);
+                ctx.lineTo(-disX, disY);
+                ctx.stroke();
+                ctx.restore();
+            };
+            // lineWidth lineCap 
+        }
+
+
+
+
+        function init() {
+                var len = 80;
+                for(var i = 0; i < len; i++){
+                    var x = Math.floor(Math.random() * canvas.width);
+                    var scale = 0.5 + Math.random();
+                    var rotate = Math.random() * 60;
+                    var speedX = 1 + Math.random();
+                    var speedY = 2 + Math.random()*4;
+                    var speedR = 2 + Math.random()*4;
+                    (function(x, scale, rotate, speedX, speedY, speedR){
+                        setTimeout(function () {
+                            var snow = new Snow(x, scale, rotate , speedX, speedY, speedR);
+                                snow.render();
+                                snowArray.push(snow);
+                        }, Math.random() * 4000);
+                    })(x, scale, rotate, speedX, speedY, speedR)
+                }
+                run();
+        }
+
+        function run() {
+            setInterval(function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < snowArray.length; i++) {
+                    snowArray[i].x = (snowArray[i].x + snowArray[i].speedX) % canvas.width;
+                    snowArray[i].y = (snowArray[i].y + snowArray[i].speedY) % canvas.height;
+                    snowArray[i].rotate = (snowArray[i].rotate + snowArray[i].speedR) % 60;
+                    snowArray[i].render();
+                }
+            }, 30);
+        }
+
+        init();
+    </script>
+</body>
+</html>

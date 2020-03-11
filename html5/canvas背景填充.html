@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="1000px" height="1000px"></canvas>
+    <script>
+        var canvas = document.getElementById('can')
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.src = "./QQ图片20191206181121.jpg"
+        img.onload = function () {
+            ctx.beginPath();
+            var bg = ctx.createPattern(img, "no-repeat");
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, 1000, 1000);
+            //纹理填充是以坐标系原点进行填充的坐标系原点
+        }
+       
+    </script>
+</body>
+</html>

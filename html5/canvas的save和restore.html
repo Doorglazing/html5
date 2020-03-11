@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="500px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        ctx.save();//存储当前状态
+        //可以保存坐标系的平移数据，缩放数据，旋转数据
+        ctx.beginPath();
+        //在全局受影响
+        ctx.translate(100, 100);
+        ctx.rotate(Math.PI / 4);
+        ctx.strokeRect(0, 0, 100, 50);
+        
+        ctx.beginPath();
+        ctx.restore();
+        //恢复
+        ctx.fillRect(200, 0, 100, 50);
+
+    </script>
+</body>
+</html>

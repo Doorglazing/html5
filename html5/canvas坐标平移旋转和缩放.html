@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" height="300px" width="500px"></canvas>
+    <script>
+        var canvas = document.getElementById('can')
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        // ctx.translate(100, 100);
+        // ctx.rotate(Math.PI / 6);
+        //旋转
+        //改变坐标系原点
+
+        ctx.moveTo(100, 100);
+        ctx.scale(2, 2);
+        //每一个坐标点都诚意系数
+        ctx.strokeRect(100, 100, 100, 100)
+    </script>
+</body>
+</html>

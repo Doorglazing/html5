@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="500px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var cst = canvas.getContext('2d');
+        cst.beginPath();
+        cst.strokeRect(0, 0, 200, 200);
+        cst.fillStyle = 'red';
+        cst.font = '30px Georgia'
+        cst.strokeText('doorglazing', '100', '100');//文字描边
+        cst.fillText('doorglazing', 200, 200);//文字填充
+    </script>
+</body>
+</html>

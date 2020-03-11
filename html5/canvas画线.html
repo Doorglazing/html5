@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="500px" height="300px"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        //取画笔 2d图形
+        var ctx = canvas.getContext("2d");
+        // 起点
+        ctx.moveTo(100,100);
+        // 终点
+        ctx.lineTo(200,100);
+        // ctx.lineTo(200,200);
+        //如果线是连续的就可以闭合 对于某一路径闭合  一笔
+        // ctx.closePath();
+        //实心
+        // ctx.fill();
+        //写在哪都相当于卸载moveTo前面
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        //重新开始路径
+        ctx.beginPath();
+        ctx.lineWidth = 5;
+        ctx.moveTo(200,100);
+        ctx.lineTo(200,200);
+        ctx.lineTo(150,200);
+        ctx.closePath();
+        ctx.stroke();
+
+
+    </script>
+</body>
+</html>

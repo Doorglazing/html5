@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          canvas{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+    <canvas id="can" width="500px" height="300px"></canvas>
+<body>
+    <script>
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        //画正方形 起点  长 宽
+        // ctx.rect(100,100,200,100);
+        // ctx.fill();
+        // ctx.stroke();
+
+        ctx.strokeRect(100,100,200,100);
+
+        // ctx.fillRect(100,100,200,100)
+    </script>
+</body>
+</html>

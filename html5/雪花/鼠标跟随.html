@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #can{
+        background-color: #000;
+    }
+</style>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        var arr = [];
+        function init () {
+            canvas.height = innerHeight;
+            canvas.width = innerWidth;
+        }
+        init();
+        window.onresize = init;
+        window.addEventListener('mousemove', function(e){
+            arr.push(new Circle(e.clientX,e.clientY));
+        })
+        //构造函数
+        function Circle (x,y) {
+            this.x = x;
+            this.y = y;
+            this.vx = (Math.random() - 0.5)*3;
+            this.vy = (Math.random() - 0.5)*3;
+            var r = random (0, 256);
+            var b = random (0, 256);
+            var g = random (0, 256);
+            this.color = 'rgb('+r+','+g+','+b+')';
+            this.a = 1;
+            this.draw();
+        }
+
+        Circle.prototype =  {
+            draw: function () {
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.globalCompositeOperation='lighter';
+                ctx.globalAlpha = this.a;
+                ctx.arc(this.x,this.y,20,0,Math.PI*2,0);
+                ctx.fill();
+                this.move();
+            },
+            move: function () {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.a *=0.98;
+                // console.log(this.x)
+            }
+        }
+
+        function render () {
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            arr.forEach(function (ele, index) {
+                ele.draw();
+            });
+            requestAnimationFrame(render);
+        }
+
+        render();
+        function random (min, max){
+            return Math.floor((max - min)*Math.random() + min)
+        }
+    </script>
+</body>
+
+</html>

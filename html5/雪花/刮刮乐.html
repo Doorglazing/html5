@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="500px" height="500px"></canvas>
+    <script>
+        var canvas = document.getElementById('can');
+        var ctx = canvas.getContext('2d');
+        var lastX, lastY, nowX, nowY;
+        function init () {
+            ctx.fillStyle = "#ccc";
+            ctx.fillRect(0,0,500,500);
+            var r = Math.random();
+            var oImg = new Image();
+            r < 0.5　? oImg.src = '1.png' : oImg.src = '2.jpg';
+            oImg.onload = function () {
+                canvas.style.backgroundImage = "url("+ oImg.src +")"
+                ctx.globalCompositeOperation="destination-out";
+
+                canvas.addEventListener('mousedown',downFun,false);
+            }
+        }
+        function downFun (e) {
+            lastX = e.clientX;
+            lastY = e.clientY
+            canvas.addEventListener('mousemove',moveFun,false);
+            canvas.addEventListener('mouseup',upFun,false);
+            canvas.addEventListener('mouseleave',leaveFun,false);
+        }
+
+        function moveFun (e) {
+            nowX = e.clientX;
+            nowY = e.clientY;
+            ctx.beginPath();
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 40;
+            ctx.lineCap = 'round';
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(nowX, nowY);
+            ctx.stroke();
+            lastX = nowX;
+            lastY = nowY;
+        }
+
+        function upFun (e) {
+            canvas.removeEventListener('mousemove',moveFun,false);
+        }
+
+        function leaveFun (e) {
+            canvas.removeEventListener('mousemove',moveFun,false);
+        }
+        init();
+    </script>
+</body>
+</html>
