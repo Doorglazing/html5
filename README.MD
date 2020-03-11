@@ -20,3 +20,10 @@ git reset --hard HEAD~1  // 回退版本
 git reset --hard ad3dde0 //任意版本跳跃
 git rebase -i HEAD~3 //多个版本进行合并
 git merge name  //合并
+git push ...... //
+git diff// 查看改变
+git log //查看日志
+git branch//查看分支
+git branch<name>//创建分支
+git checkout <name> //切换分支
+
