@@ -1,0 +1,14 @@
+[1mdiff --git a/README.MD b/README.MD[m
+[1mindex 13e36a2..2c39230 100644[m
+[1m--- a/README.MD[m
+[1m+++ b/README.MD[m
+[36m@@ -18,4 +18,6 @@[m [mgit checkout --.\   //花式撤销[m
+ git reflog //查看所有提交版本[m
+ git reset --hard HEAD~1  // 回退版本[m
+ git reset --hard ad3dde0 //任意版本跳跃[m
+[31m-git rebase -i HEAD~3 //多个版本进行合并[m
+\ No newline at end of file[m
+[32m+[m[32mgit rebase -i HEAD~3 //多个版本进行合并[m
+[32m+[m
+[32m+[m[32mgit diff// 查看改变[m
+\ No newline at end of file[m
