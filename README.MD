@@ -19,3 +19,4 @@ git reflog //查看所有提交版本
 git reset --hard HEAD~1  // 回退版本
 git reset --hard ad3dde0 //任意版本跳跃
 git rebase -i HEAD~3 //多个版本进行合并
+git merge name  //合并
