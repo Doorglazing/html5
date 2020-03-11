@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.5;
+}
+.header:hover{
+    opacity: 0.8;
+}
+.header .nav{
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+}
+.header .nav .logo{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+
+}
+.header .nav .logo img{
+    width: 100%;
+}
+.header ul{
+    float: right;
+}
+.header ul li {
+    position: relative;
+    float: left;
+}
+.header ul  li a{
+    line-height: 80px;
+    color: #777;
+    padding: 0 20px;
+}
+.header ul  li a:hover{
+    color: #000;
+}
+.header ul li::after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0%;
+    height: 0px;
+    border-bottom:2px solid black;
+    bottom: 4px;
+    transition: width 0.5s ease-in-out;
+}
+.header ul li:hover::after{
+    width: 100%;
+}
+.btn{
+    display: none;
+}
+.btnList{
+    display: none;
+}
+/* 媒体查询 */
+@media screen and (max-width:900px){
+    .header{
+        height: 50px;
+    }
+    .header ul li a{
+        line-height: 50px;
+    }
+}
+@media screen and (max-width:700px){
+    .header .btn{
+        display: block;
+        position: absolute;
+        width:50px;
+        height:50px;
+        background-image: url('./img/btn.png');
+        background-size: cover;
+        cursor: pointer;
+        right: 20px;
+        top: 0px;
+        background-position: center;
+    }
+    .header ul.list{
+        display: none;
+    }
+    .header ul.btnList{
+        display: none;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .header ul.btnList li{
+        width: 100%;
+        height: 40px;
+        background-color: #eee;
+        border-bottom: 1px solid #ddd;
+    }
+    .header ul.btnList li a{
+        line-height: 40px;
+    }
+}
+
+
+.content{
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.content #swiper{
+    width: 100%;
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+.content .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.content .text p{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;
+    opacity: 0.1;
+    transition: opacity 0.5s linear;
+}
+.content:hover .text p{
+    opacity: 0.8;
+}
+
+
+/* project */
+.project{
+    width: 80%;
+    margin: 10px auto;
+}
+.project .title{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+}
+.project .title p{
+    color:#bbb;
+    font-weight:bolder;
+}
+.project .list{
+    width: 100%;
+    text-align: center;
+}
+.project .list .item{
+    display: inline-block;
+    width: 260px;
+    height: 170px;
+    padding: 20px 10px;
+    margin: 40px 20px;
+    border: 1px solid #ddd;
+}
+.project .list .item img{
+    width: 95%;
+    height: 80%;
+    border-radius: 10px;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.project .list .item img:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+@media screen and (max-width:1300px){
+    .project .list .item{
+        width: 220px;
+        margin: 13px;
+    }
+}
+@media screen and (max-width:900px){
+    .project .list .item{
+        width: 250px;
+        margin: 13px;
+    }
+}
+@media screen and (max-width:700px){
+    .project .list .item{
+        width: 350px;
+        margin: 10px auto;
+        height: 230px;
+    }
+}
+
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('./img/bottom.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.footer::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}

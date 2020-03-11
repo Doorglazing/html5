@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: absolute;
+            height: 100px;
+            width: 300px;
+            font-size: 50px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .fd{
+            top: calc(50% - 50px);
+            left: calc(50% - 150px);
+            text-shadow: 1px 1px 1px #000 , -1px -1px 1px #fff;
+        }
+        .lk{
+            top: calc(25%);
+            left: calc(50% - 150px);
+            text-shadow: -1px -1px 1px #000, 1px 1px #fff;
+        }
+        .yfs{
+            color: #000;
+            top: calc(25%);
+            left: calc(25%);
+            transition: all .5s ease-in .1s;
+        }
+        .yfs:hover{
+            /* transition: all .5s ease-in .1s; */
+            text-shadow: 20px 10px 1px #ff0,
+                         20px -20px 1px #f0f,
+                         -20px 30px 1px #f00,
+                         -20px -10px 1px #00f,
+                         50px 20px 5px #ff0,
+                         50px -30px 5px #f0f,
+                         -50px 40px 5px #f00,
+                         -50px -10px 5px #00f;
+
+        }
+        .yfs:hover::after{
+            text-shadow: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="fd">浮雕效果</div>
+    <div class="lk">镂刻效果</div>
+    <div class="yfs">影分身</div>
+</body>
+</html>

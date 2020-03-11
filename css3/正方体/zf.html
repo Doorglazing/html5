@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        @keyframes move{
+            0%{
+                transform: rotatex(0deg) rotatey(0deg);
+            }
+            100%{
+                transform: rotatex(360deg) rotatey(360deg);
+            }
+        }
+        div{
+            perspective: 20000px;
+            /* 景深设置的太小有点不想正方形 */
+        }
+        ul{
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform-origin: 100px 100px 100px;
+            position: absolute;
+            animation: move 5s linear infinite;
+            margin: 100px auto;
+        }
+        ul li{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+        }
+        ul li:nth-of-type(1){
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+            background: rgba(000,000,000,0.3);
+        }
+        ul li:nth-of-type(2){
+            transform-origin: top;
+            transform: rotateX(-90deg);
+            background: rgba(255,000,000,0.3);
+        }
+        ul li:nth-of-type(3){
+            transform-origin: left;
+            transform: rotatey(90deg);
+            background: rgba(000,255,000,0.3);
+        }
+        ul li:nth-of-type(4){
+            transform-origin: right;
+            transform: rotatey(-90deg);
+            background: rgba(000,000,255,0.3);
+        }
+        ul li:nth-of-type(5){
+            transform: translatez(-300px);
+            background: rgba(255,255,000,0.3);
+        }
+        ul li:nth-of-type(6){
+            background: rgba(255,000,255,0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+<script>
+
+
+
+
+</script>
+</html>

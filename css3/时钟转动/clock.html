@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes second{
+            0%{
+                transform: rotate(180deg); 
+            }
+            100%{
+                transform: rotate(540deg); 
+            }
+        }
+        @keyframes minute{
+            0%{
+                transform: rotate(180deg); 
+            }
+            100%{
+                transform: rotate(540deg); 
+            }
+        }
+        @keyframes hour{
+            0%{
+                transform: rotate(180deg); 
+            }
+            100%{
+                transform: rotate(540deg); 
+            }
+        }
+
+
+
+
+        div{
+            width:512px;
+            height:512px;
+            background-image: url(./src/clock.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        div.second{
+            transform-origin:center 76px;
+            width:16px;
+            height:278px;
+            position: absolute;
+            background-image: url(./src/second.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 246px;
+            top: 179px;
+            transform: rotate(180deg); 
+            z-index: 3;
+            animation: second 60s steps(60,end) infinite;
+        }
+        div.minute{
+            transform-origin:center 16px;
+            position: absolute;
+            left: 239px;
+            top: 240px;
+            width:32px;
+            height:218px;
+            background-image: url(./src/minute.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg); 
+            z-index: 2;
+            animation: minute 3600s steps(60,end) infinite;
+        }
+        div.hour{
+            transform-origin:center 16px;
+            position: absolute;
+            left: 239px;
+            top: 240px;
+            width:32px;
+            height:148px;
+            background-image: url(./src/hour.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+            animation: hour 216000s steps(12,end) infinite;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+        <div class="second"></div>
+        <div class="minute"></div>
+        <div class="hour"></div>
+    </div>
+</body>
+</html>

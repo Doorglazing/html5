@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .wrapper{
+/* none：不允许用户调整元素大小。
+both：用户可以调节元素的宽度和高度。
+horizontal：用户可以调节元素的宽度
+vertical：用户可以调节元素的高度。 */
+/* 需要配合hidden用 */
+        overflow: hidden;
+        resize: both;
+        height: 500px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #f44;
+        /* box-sizing: border-box; */
+    }
+    .header,.footer{
+        /* height: 100px; */
+        flex: 0 0 20%;
+        /* background-color: #f44; */
+        border: 1px solid #f44;
+        box-sizing: border-box;
+    }
+    .content{
+        flex: 1 0 auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .content .left{
+        flex: 0 0 20%;
+        border: 1px solid #f44;
+        box-sizing: border-box;
+    }
+    .content .right{
+        flex: 0 1 20%;
+        border: 1px solid #f44;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="content">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>
