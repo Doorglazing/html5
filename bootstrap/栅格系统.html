@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .row div{
+            background-color: green;
+            height: 100px;
+            border: 1px solid black;
+            color: #fff;
+        }
+
+        /* 对齐样式 */
+        .v-align{
+            height: 100px;
+            background: rgba(255, 0, 0, 0.1);
+            margin: 10px -15px;
+        }
+        .v-align div{
+            height: 40px;
+            line-height: 40px;
+            background: 1px solid black;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- 一行最多分为12列 -->
+    <!-- 3.x是流式布局   4.x是弹性布局 -->
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-1">1列</div>
+            <div class="col-xl-1">2列</div>
+            <div class="col-xl-1">3列</div>
+            <div class="col-xl-1">4列</div>
+            <div class="col-xl-1">5列</div>
+            <div class="col-xl-1">6列</div>
+            <div class="col-xl-1">7列</div>
+            <div class="col-xl-1">8列</div>
+            <div class="col-xl-1">9列</div>
+            <div class="col-xl-1">10列</div>
+            <div class="col-xl-1">11列</div>
+            <div class="col-xl-1">12列</div>
+        </div>  -->
+        <!-- 行 -->
+        <!-- <div class="row">
+            <div class="col-xl-2">占2列</div>
+            <div class="col-xl-7">占7列</div>
+        </div>
+    </div>   -->
+    <!-- 百分百宽度 -->
+    <!-- <div class="container">
+        <div class="row"></div>
+    </div> -->
+    <!-- 有具体数值的 -->
+    <!-- mt-5 是模块间的间距 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3">xl为超大屏。屏幕宽度>=1200 max-width :1140 一行12列。</div>
+            <div class="col-xl-3"></div>
+            <div class="col-xl-3"></div>
+            <div class="col-xl-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">lg 为大屏 屏幕宽度固定为960px 一行12列 屏幕尺寸</div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">md 中等屏幕> 768   </div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">小屏幕 ></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-3">超小屏幕  &lt; 小于</div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+            <div class="col-3"></div>
+        </div>
+        <!-- 设置等宽列 ， 平分宽度 通过.col 的class设置 -->
+        <div class="row mt-5">
+            <div class="col">等宽列</div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">等宽列</div>
+            <div class="col">等宽列</div>
+            <div class="col">等宽列</div>
+            <div class="col">等宽列</div>
+            <div class="col">等宽列</div>
+        </div>
+        <!-- 早希望断开的地方添加 .w-100 后面的换行 -->
+        <div class="row">
+            <div class="col">等宽列1</div>
+            <div class="col">等宽列2</div>
+            <div class="w-100" style="height: auto; border: none;"></div>
+            <div class="col">等宽列3</div>
+            <div class="col">等宽列4</div>
+        </div>
+        <!-- 设置一个列宽，剩下的自动平分 -->
+        <div class="row mt-5">
+            <div class="col-sm-7">在小屏幕下占7列</div>
+            <div class="col">自动平分剩余宽度</div>
+            <div class="col">自动平分剩余宽度</div>
+        </div>
+        <!-- 设置根据内容调整宽度  使用 .col-{breakpoint}-auto -->
+        <div class="row mt-5">
+            <div class="col-md-auto">中等屏幕下由内容撑开宽度</div>
+            <div class="col">自动评分剩下的宽度</div>
+            <div class="col-lg-2">在大屏下占两列</div>
+        </div>
+        <!-- 设置所有尺寸下都占同样的列数 .col -->
+        <div class="row">
+            <div class="col-8">所有尺寸都满足占8列</div>
+            <div class="col-4">所有尺寸都满足占4列</div>
+        </div>
+        <!-- 混合排列或者组合模式 -->
+             <!-- 1，超大屏幕下一行显示6个div  一个div占2列
+             2，大屏幕下显示4个，一个div占3列
+             3，小屏幕下 -->
+        <div class="row mt-5">
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">超大屏6个 大屏4个 中等凭3个 小屏2个 超小屏幕1个 </div>
+        </div>
+        <!-- 对齐 3.x版本没有  -->
+        <!-- 垂直对齐 ：行的对齐 ： align-items-start 顶对齐 
+                                   align-items-center 中间对齐
+                                   align-items-end     底对齐
+                        列的单独对齐方式：
+                                   align-self-start  顶对齐
+                                   align-self-center 中间对齐
+                                   align-self-end    底对齐
+        -->
+        <div class="row v-align">
+            <div class="col">垂直对齐 行对齐 顶对齐</div>
+            <div class="col">垂直对齐 行对齐 顶对齐</div>
+            <div class="col">垂直对齐 行对齐 顶对齐</div>
+        </div>
+        <div class="row v-align align-items-center">
+            <div class="col">垂直对齐 行对齐 中间对齐</div>
+            <div class="col">垂直对齐 行对齐 中间对齐</div>
+            <div class="col">垂直对齐 行对齐 中间对齐</div>
+        </div>
+        <div class="row v-align  align-items-end">
+            <div class="col">垂直对齐 行对齐 底对齐</div>
+            <div class="col">垂直对齐 行对齐 底对齐</div>
+            <div class="col">垂直对齐 行对齐 底对齐</div>
+        </div>
+        <div class="row v-align">
+            <div class="col align-self-start">垂直对齐 列对齐 底对齐</div>
+            <div class="col align-self-center">垂直对齐 列对齐 底对齐</div>
+            <div class="col align-self-end">垂直对齐 列对齐 底对齐</div>
+        </div>
+        <!-- 水平对齐 
+            justify-content-start 左对齐
+            justify-content-center 居中对齐
+            justify-content-end    右对齐
+            justify-content-around 分散居中对齐
+            justify-content-between   左右两端对齐
+        
+        -->
+        <div class="row v-align justify-content-start">
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div> 
+
+        <!-- 列排序 使用.order-{breakpoint}-1 2 3  first last-->
+        <div class="row mt-5">
+            <div class="col">1</div>
+            <div class="col order-first">2</div>
+            <div class="col order-last">3</div>
+        </div>
+        <!-- 列偏移 offset-{}-*  -->
+        <div class="row mt-5">
+            <div class="col offset-md-3">偏移</div>
+        </div>
+        <!-- 间距 使用margin工具可以让列之间产生间隔
+        mr-{}-auto 右侧
+        ml-{}-auto 左侧  -->
+        <div class="row mt-5">
+            <div class="col-3 mr-md-auto"></div>
+            <div class="col-3 ml-md-auto"></div>
+        </div>
+        <!-- 嵌套 每一个列里面可以在继续放行 那嵌套的元素就以父级的宽度为基准 再分12列 -->
+        <div class="row mt-5">
+            <div class="col-sm-9"></div>
+        </div>
+
+
+    </div>
+</body>
+</html>
