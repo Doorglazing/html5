@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cal(a,b,c,d){
+            return a+b+c+d;
+        }
+
+        function curry (func, ...args){
+            return function (...subArgs) {
+                const allArgs= [...args, ...subArgs];
+                if(args.length >= func.length){
+                    //参数够了
+                    func();
+                }else{
+                    //参数不够 继续固定
+                    return curry (func,...allArgs);
+                }
+            }
+        }
+        const newCal = curry (cal, 1, 2)
+        console.log(newCal(3,4))
+        console.log(newCal(4,45))
+        console.log(newCal(23,43))
+        console.log(newCal(33,44))
+        const newCal2 = newCal(8);
+        console.log(newCal2(9));
+    </script>
+</body>
+</html>
